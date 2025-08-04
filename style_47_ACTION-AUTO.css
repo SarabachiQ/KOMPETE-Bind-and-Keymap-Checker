@@ -1,0 +1,276 @@
+.highlight {
+  animation: blink 0.85s step-end infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    background-color: #444;
+  }
+  to {
+    background-color: #666;
+  }
+}
+
+.close-btn5 {
+  text-align: right !important;
+  font-size: 1.2rem;
+  padding: 1rem 0.8rem;
+}
+
+.close-btn6 {
+  text-align: right !important;
+  font-size: 1.2rem;
+  padding: 1rem 0.8rem;
+}
+
+td.active-cell {
+  background-color: #E0FFAA;
+  opacity: 100%;
+  pointer-events: none;
+  font: italic;
+}
+
+#container1 td.fixed-cell {
+  background-color: #005942;
+  opacity: 25%;
+  font: italic;
+}
+
+#container5 td.fixed-cell {
+  background-color: #810000;
+  opacity: 25%;
+  font: italic;
+}
+
+#container6 td.fixed-cell {
+  background-color: #610081;
+  opacity: 25%;
+  font: italic;
+}
+
+.dual {
+  background-color: #000c09;
+  /*
+  background-color: #005942;
+  */
+  opacity: 100%;
+  font: italic;
+}
+
+.drag-hover {
+  background-color: #555;
+  color: yellow;
+}
+
+tr.draggable {
+  cursor: grab;
+}
+
+tr.dragging td {
+  color: yellow;
+}
+
+td.inner-btn {
+  min-width: 0.2rem;
+  min-height: 1.2rem;
+  position: relative;
+  vertical-align: middle;
+}
+
+.inner-btn {
+  padding: 0rem 0rem;
+  display: inline-block;
+  font-weight: normal;
+  background-color: #FFF760;
+  color: white;
+  border: 1px solid #888;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.2rem;
+}
+
+.inner-btn.shape-round {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #D4D4D4;
+  color: #3E3E3E;
+  border: 1.0px solid #B3B3B3;
+}
+
+.inner-btn.shape-oblong {
+  border-radius: 2.4rem;
+  width: 2.4rem;
+  height: 1.2rem;
+  background-color: #C0ECFF;
+  color: #3A6692;
+  border: 1.0px solid #62b1ff;
+}
+
+.inner-btn.shape-square {
+  border-radius: 0.2rem;
+  width: auto;
+  padding: 0rem 0.2rem;
+  height: 1.2rem;
+  background-color: #EDEDED;
+  color: #484848;
+  border: 1.0px solid #B3B3B3;
+}
+
+.inner-btn.shape-fixed {
+  border-radius: 0.2rem;
+  width: auto;
+  padding: 0rem 0.4rem;
+  height: 1.0rem;
+  background-color: #232323;
+  color: white;
+  border: 0.5px solid #62b1ff;
+}
+
+.inner-btn.shape-dual {
+  border-radius: 0.2rem;
+  width: auto;
+  padding: 0rem 0.4rem;
+  height: 1.2rem;
+  background-color: #120707;
+  color: white;
+  border: 0.5px solid #62b1ff;
+}
+
+.inner-btn.shape-joystick {
+  border-radius: 0.2rem;
+  width: auto;
+  padding: 0rem 0.2rem;
+  height: 1.2rem;
+  background-color: #120707;
+  color: #FF4734;
+  border: 1.0px solid #3B0808;
+}
+
+.inner-btn.shape-macro {
+  border-radius: 0.2rem;
+  width: 2.0rem;
+  height: 1.2rem;
+  background-color: #9c00d0;
+  color: #F5D9FF;
+  border: 0.5px solid #9c00d0;
+}
+
+.inner-btn.shape-tap {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #9c00d0;
+  color: #F5D9FF;
+  border: 0.5px solid #9c00d0;
+}
+
+body.mode-xbox .btn-A {
+  background-color: #232323;
+  color: #3DFF33;
+  border-color: #3DFF33;
+}
+body.mode-xbox .btn-B {
+  background-color: #232323;
+  color: #FF3333;
+  border-color: #FF3333;
+}
+body.mode-xbox .btn-X {
+  background-color: #232323;
+  color: #5533FF;
+  border-color: #5533FF;
+}
+body.mode-xbox .btn-Y {
+  background-color: #232323;
+  color: #FFFC33;
+  border-color: #FFFC33;
+}
+
+body.mode-ps .btn-A {
+  background-color: #232323;
+  color: #B4A5FF;
+  border-color: #B4A5FF;
+}
+body.mode-ps .btn-B {
+  background-color: #232323;
+  color: #FF1B1B;
+  border-color: #FF1B1B;
+}
+body.mode-ps .btn-X {
+  background-color: #232323;
+  color: #FF9D9D;
+  border-color: #FF9D9D;
+}
+body.mode-ps .btn-Y {
+  background-color: #232323;
+  color: #80FFA6;
+  border-color: #80FFA6;
+}
+
+body.mode-switch .btn-A {
+  background-color: #232323;
+  color: white;
+  border-color: #232323;
+}
+body.mode-switch .btn-B {
+  background-color: #232323;
+  color: white;
+  border-color: #232323;
+}
+body.mode-switch .btn-X {
+  background-color: #232323;
+  color: white;
+  border-color: #232323;
+}
+body.mode-switch .btn-Y {
+  background-color: #232323;
+  color: white;
+  border-color: #232323;
+}
+/*
+#container6 td.btn-macro {
+  background-color: #b900f7;
+  color: #B51010;
+  border-color: #9c00d0;
+}
+*/
+/*
+@media (orientation: landscape) {
+  .wrapper {
+    flex-direction: row;
+  }
+}
+
+@media (orientation: portrait) {
+  .wrapper {
+    flex-direction: column;
+    padding-bottom: 4rem;
+  }
+}
+*/
+
+@media (orientation: portrait) {
+  #container1, #container2 {
+    flex: 0 0 50%;
+    height: 70%;
+  }
+  #container3 {
+    flex: 0 0 100%;
+    height: 70%;
+  }
+}
+@media (orientation: landscape) {
+  #container1, #container2 {
+    flex: 0 0 25%;
+  }
+  #container3 {
+    flex: 0 0 50%;
+  }
+  .container {
+    height: 60%;
+  }
+}
