@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOMPETE | Bind and Keymap Checker</title>
+  <link rel="stylesheet" href="style_57_LAYOUT-ID.css">
+  <link rel="stylesheet" href="style_57_ACTION-AUTO.css">
+</head>
+<body class="mode-xbox">
+  <div class="title-bar">
+    <h1 class="title">KOMPETE&nbsp;&nbsp;|&nbsp;&nbsp;Bind and Keymap Checker</h1>
+    <div class="mode-btn">
+      <button onclick="setMode('modeXbox')">X</button>
+      <button onclick="setMode('modePlaystation')">P</button>
+      <button onclick="setMode('modeSwitch')">S</button>
+    </div>
+  </div>
+
+  <section id="poolWindow5">
+  
+    <table id="gameBtn" class="game-btn">
+      <thead>
+        <tr><th colspan="4">
+          <div class="close-btn5" onclick="closePoolWindow5()">
+            ✕
+          </div>
+        </th></tr>
+      </thead>
+      <tbody id="btnGamePool"></tbody>
+    </table>
+
+  </section>
+  
+  <!-- keymap2 用のプール領域 -->
+  <section id="poolWindow2">
+  
+    <table id="keymapBtn2" class="keymap-btn">
+      <thead>
+        <tr><th colspan="4">
+          <div class="close-btn2" onclick="closePoolWindow2()">
+            ✕
+          </div>
+        </th></tr>
+      </thead>
+      <tbody id="btnKeymapPool2"></tbody>
+    </table>
+  </section>
+  
+  <!-- keymap3 用のプール領域（新規） -->
+  <section id="poolWindow3">
+    
+    <table id="keymapBtn3" class="keymap-btn">
+      <thead>
+        <tr><th colspan="4">
+          <div class="close-btn3" onclick="closePoolWindow3()">
+            ✕
+          </div>
+        </th></tr>
+      </thead>
+      <tbody id="btnKeymapPool3"></tbody>
+    </table>
+  </section>
+
+  <div class="wrapper">
+    <!-- Container 1 -->
+    <div id="container1" class="container">
+      <h2 class="container-title">👊 GAME SETTING</h2>
+      <div class="table-box">
+        <table class="game-table" id="gameTable">
+          <thead>
+            <tr class="column-label">
+              <th>Binds</th>
+              <th>▲</th>
+            </tr>
+          </thead>
+          <tbody id="gameBody"></tbody>
+        </table>
+      </div>
+
+    </div>
+    <!-- Container 2 -->
+    <div id="container2" class="container">
+      <h2 class="container-title">🎮 CONTROLLER SETTING</h2>
+      <div class="table-box">
+        <table class="keymap-table2" id="keymapTable2">
+          <thead>
+            <tr class="column-label">
+              <th>to</th>
+              <th>Swap</th>
+            </tr>
+          </thead>
+          <tbody id="keymapBody2"></tbody>
+        </table>
+      </div>
+
+    </div>
+        <!-- Container 3 -->
+    <div id="container3" class="container">
+      <h2 class="container-title">🎮 CONTROLLER SETTING</h2>
+      <div class="table-box">
+        <table class="keymap-table3" id="keymapTable3">
+          <thead>
+            <tr class="column-label">
+              <th>with</th>
+              <th>■</th>
+            </tr>
+          </thead>
+          <tbody id="keymapBody3"></tbody>
+        </table>
+      </div>
+      
+    </div>
+    <!-- Container 4 -->
+    <section id="container4" class="container">
+      <h2 class="container-title">🧬 I/O MONITOR</h2>
+      <div class="controller-image-wrapper">
+        <div>
+          <p class="text-message">
+            Press a button to check how inputs map to actions
+          </p>
+        </div>
+        <div>
+          ▼
+        </div>
+        <object type="image/svg+xml" data="image/controller_6.svg" style="max-width:100%; height:auto;"></object>
+      </div>
+    </section>
+    <div id="log"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>
+    eruda.init();
+  </script>
+  <script src="script57.js"></script>
+</body>
+</html>

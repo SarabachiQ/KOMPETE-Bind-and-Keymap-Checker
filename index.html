@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensitivity Calculator</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-color: #1f1f1f;
+      --accent-color: #4caf50;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .container {
+      background-color: var(--card-color);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent-color);
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.3rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: #2c2c2c;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: var(--accent-color);
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: center;
+      color: var(--accent-color);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sensitivity Calculator</h1>
+    <label for="resolution">Tablet Resolution (e.g., 1920x1080):</label>
+    <input type="text" id="resolution" placeholder="Enter resolution (e.g. 1920x1080)" />
+
+    <label for="fingerMovement">Finger Movement (width x height in pixels):</label>
+    <input type="text" id="fingerMovement" placeholder="Enter finger movement (e.g. 800x400)" />
+
+    <label for="maxSensitivity">Max In-Game Sensitivity:</label>
+    <input type="number" id="maxSensitivity" placeholder="Enter max sensitivity (e.g. 100)" />
+
+    <label for="desiredAngle">Desired Rotation Angle (degrees):</label>
+    <input type="number" id="desiredAngle" placeholder="Enter desired angle (e.g. 180)" />
+
+    <button onclick="calculateSensitivity()">Calculate Optimal Sensitivity</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateSensitivity() {
+      const resolution = document.getElementById("resolution").value.split("x").map(Number);
+      const movement = document.getElementById("fingerMovement").value.split("x").map(Number);
+      const maxSensitivity = parseFloat(document.getElementById("maxSensitivity").value);
+      const desiredAngle = parseFloat(document.getElementById("desiredAngle").value);
+
+      if (resolution.length !== 2 || movement.length !== 2 || isNaN(maxSensitivity) || isNaN(desiredAngle)) {
+        document.getElementById("result").innerText = "Please fill in all fields correctly.";
+        return;
+      }
+
+      const moveDistance = Math.sqrt(Math.pow(movement[0], 2) + Math.pow(movement[1], 2));
+      const diagonal = Math.sqrt(Math.pow(resolution[0], 2) + Math.pow(resolution[1], 2));
+
+      const sensitivity = (desiredAngle / 360) * (diagonal / moveDistance) * maxSensitivity;
+      const optimalSensitivity = Math.min(sensitivity, maxSensitivity).toFixed(2);
+
+      document.getElementById("result").innerText = `Optimal Sensitivity: ${optimalSensitivity}`;
+    }
+  </script>
+</body>
+</html>

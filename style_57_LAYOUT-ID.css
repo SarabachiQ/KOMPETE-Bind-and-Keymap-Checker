@@ -1,0 +1,470 @@
+/* ==================== Global Styles ==================== */
+html, body {
+  width: 100vw;
+  margin: 0;
+  padding-bottom: 1.2rem;
+  background-color: #212121;
+  font-family: sans-serif;
+  color: white;
+}
+
+.title-bar {
+  display: flex;
+  height: 2.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 1.2rem;
+  background-color: #1a1a1a;
+  border-bottom: 0.1px solid #333;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.title {
+  text-align: left;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0rem;
+  margin-top: env(safe-area-inset-top, 1.5rem);
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+  opacity: 75%;
+}
+
+.mode-btn {
+  margin-right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mode-btn button {
+  padding-right: 2rem;
+  background: #001;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+.controller-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 2.4rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.controller-image {
+  width: 80%;
+  max-width: 75%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.container-title {
+  margin: 5px 10px;
+  padding: 0;
+  font-size: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  opacity: 50%;
+}
+
+#container1,
+#container2,
+#container3,
+#poolWindow5,
+#poolWindow2,
+#poolWindow3 {
+  height: 100%;
+}
+
+#container1 {
+  width: 20%;
+  min-width: 20%;
+  position: relative;
+  z-index: 1;
+}
+
+#container1 table {
+  width: 100%;
+  height: 100%;
+  table-layout: auto;
+  background: #000c09;
+}
+
+#container2 {
+  width: 10%;
+  min-width: 10%;
+  position: relative;
+  z-index: 1;
+}
+
+#container2 table {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  /*
+  table-layout: fixed;
+  */
+  background-color: #252525;
+}
+
+#container3 {
+  width: 20%;
+  min-width: 20%;
+  position: relative;
+  z-index: 1;
+}
+
+#container3 table {
+  width: 100%;
+  height: 100%;
+  /*
+  table-layout: auto;
+  */
+  /*
+  table-layout: fixed;
+  */
+  background-color: #252525;
+  box-sizing: border-box;
+}
+
+#container4 {
+  width: 46%;
+  min-width: 46%;
+}
+
+#poolWindow5 {
+  background-color: #330000;
+  box-sizing: border-box;
+}
+
+#poolWindow5 table {
+  height: 100%;
+  width: 90%;
+  min-width: 60%;
+}
+
+#poolWindow2 {
+  background-color: #18001f;
+  box-sizing: border-box;
+}
+
+#poolWindow2 table {
+  height: 100%;
+  width: 90%;
+  min-width: 60%;
+}
+
+#poolWindow3 {
+  background-color: #18001f;
+  box-sizing: border-box;
+}
+
+#poolWindow3 table {
+  height: 100%;
+  width: 90%;
+  min-width: 60%;
+}
+
+/* poolWindow5: 左から右へ */
+#poolWindow5 {
+  position: absolute;
+  width: auto;
+  visibility: hidden;
+  /*
+  transform: translateX(-100%);
+  */
+  transition: transform 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+#poolWindow5.show {
+  height: 100%;
+  /*
+  transform: translateX(200%);
+  */
+  visibility: visible;
+  max-width: none;
+}
+
+#poolWindow5.show table {
+  display: inline-table;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin-left: 0%;
+  background: #0c0003;
+}
+
+/* container6: 右から左へ */
+#poolWindow2 {
+  position: absolute;
+  width: auto;
+  visibility: hidden;
+  /*
+  transform: translateX(-100%);
+  */
+  transition: transform 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+}
+#poolWindow2.show {
+  height: 100%;
+  /*
+  transform: translateX(200%);
+  */
+  visibility: visible;
+  max-width: none;
+}
+
+#poolWindow2.show table {
+  display: inline-table;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin-left: 0%;
+  background-color: #0c0c00;
+}
+
+/* container6: 右から左へ */
+#poolWindow3 {
+  position: absolute;
+  width: auto;
+  visibility: hidden;
+  /*
+  transform: translateX(-100%);
+  */
+  transition: transform 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+}
+#poolWindow3.show {
+  height: 100%;
+  /*
+  transform: translateX(200%);
+  */
+  visibility: visible;
+  max-width: none;
+}
+
+#poolWindow3.show table {
+  display: inline-table;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin-left: 0%;
+  background-color: #0c0c00;
+}
+
+/*
+#poolWindow5 table {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#poolWindow2 table {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#poolWindow3 table {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+*/
+
+table {
+  height: 100%;
+  border-collapse: collapse;
+  flex: 1;
+}
+
+
+th, td {
+  padding: 0rem 0rem;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+  height: 20px;
+  min-height: 0.8rem;
+  min-width: 4rem;
+  /*
+  min-width: 4rem
+  */
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* まずは優先度を上げて強制的に高さを適用 */
+#poolWindow5.show th,
+#poolWindow5.show td,
+#poolWindow2.show th,
+#poolWindow2.show td,
+#poolWindow3.show th,
+#poolWindow3.show td {
+  height: 40px !important;
+  line-height: 40px !important; /* 高さに合わせてテキストも中央寄せ */
+  padding: 0 !important; /* 余白が原因の場合に備えて */
+}
+/*
+td.btn-cell6 {
+  max-width: 80px;
+  overflow: hidden;
+}
+td.btn-cell6 {
+  max-width: 80px;
+  overflow: hidden;
+}
+*/
+
+#container1 th {
+  background-color: #070707;
+  color: #33ffcc;
+}
+
+#container1 td {
+  border: 0.1px solid #33ffcc;
+}
+
+#container2 th {
+  background-color: #0c0900;
+  color: #ffcc33;
+}
+
+#container2 td {
+  background-color: #0c0900;
+  border: 0.5px solid #d09c00;
+}
+
+#container3 th {
+  background-color: #0c0900;
+  color: #ffcc33;
+}
+
+#container3 td {
+  background-color: #0c0900;
+  border: 0.5px solid #d09c00;
+}
+
+#poolWindow5 th {
+  background-color: #0c0003;
+  color: #ff3333;
+  font-weight: normal;
+  font-size: 0.6rem;
+}
+
+#poolWindow5 td {
+  border: 0.5px solid #ff3333;
+}
+
+#poolWindow2 th {
+  background-color: #0c0c00;
+  color: #cc33ff;
+  font-weight: normal;
+  font-size: 0.6rem;
+}
+
+#poolWindow2 td {
+  border: 0.5px solid #b900f7;
+}
+
+#poolWindow3 th {
+  background-color: #0c0c00;
+  color: #cc33ff;
+  font-weight: normal;
+  font-size: 0.6rem;
+}
+
+#poolWindow3 td {
+  border: 0.5px solid #b900f7;
+}
+
+.table-box {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  min-height: 0;
+}
+
+.container1 th:first-child {
+  min-width: 4rem;
+  min-width: 40%;
+}
+
+.keymapBody3 td:last-child {
+  /*
+  min-width: 4rem;
+  */
+  max-width: 1%;
+}
+
+/*
+.container1 .table-box:last-child {
+  width: 50%;
+  max-width: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.container1 .table-box:first-child,
+.container2 .table-box:first-child {
+  width: auto;
+  max-width: 60%;
+}
+
+.container1 .table-box:last-child,
+.container2 .table-box:last-child {
+  width: auto;
+  max-width: 40%;
+}
+*/
+.column-label {
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-message {
+  text-align: center;
+  font-size: 0.6rem;
+  padding-top: 1.8rem;;
+}
+
+/*
+.keymap-table2 td:nth-child(3),
+.keymap-table2 td:nth-child(4),
+.keymap-table2 th:nth-child(3),
+.keymap-table2 th:nth-child(4) {
+  display: none;
+}
+.keymap-table3 td:nth-child(1),
+.keymap-table3 td:nth-child(2),
+.keymap-table3 th:nth-child(1),
+.keymap-table3 th:nth-child(2) {
+  display: none;
+}
+*/
